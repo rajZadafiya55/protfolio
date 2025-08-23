@@ -16,7 +16,7 @@ const educationData = [
   },
   {
     degree: "Higher Secondary Certificate (HSC)",
-    school: "Sadhna Vidyabhavan",
+    school: "Sadhna Vidhyabhavan",
     year: "2018 - 2020",
     location: "Surat, Gujarat, India",
   },
