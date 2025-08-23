@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "react-toastify";
 import {
   Mail,
   Phone,
@@ -81,7 +82,9 @@ const Contact = () => {
         },
         import.meta.env.VITE_EMAILJS_USER_ID
       );
-      setMailStatus("Message sent successfully!");
+      toast.success("Message sent successfully!", {
+        autoClose: 3000,
+      });
       reset();
       setTimeout(() => setMailStatus(null), 3000);
     } catch (error) {
