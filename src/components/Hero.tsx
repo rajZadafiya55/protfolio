@@ -17,99 +17,80 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white mt-16"
     >
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 gradient-animated opacity-80" />
-
-      {/* Floating particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-primary/30 rounded-full float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${6 + Math.random() * 4}s`,
-            }}
-          />
-        ))}
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 -left-24 w-72 h-72 bg-secondary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-2xl" />
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        {/* Professional badge/intro */}
+        <div 
+          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-8 transition-all duration-700 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          AVAILABLE FOR PROJECTS
+        </div>
+
         {/* Main heading with staggered animation */}
         <div
           className={`space-y-6 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
         >
-          <h1 className="text-6xl md:text-8xl font-bold leading-tight">
-            <span className="block gradient-text">Software</span>
-            <span
-              className="block gradient-text pb-4"
-              style={{ animationDelay: "0.2s" }}
-            >
-              Developer
+          <h1 className="text-6xl font-black tracking-tight text-slate-900 leading-[1.1] font-heading">
+            Full-Stack Developer <br />
+            <span className="text-primary italic">
+              Building Scalable & Impactful Solutions
             </span>
           </h1>
 
           <p
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-gray-700"
-            style={{ animationDelay: "0.4s" }}
+            className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-medium"
+            style={{ animationDelay: "0.2s" }}
           >
-            I develop innovative web solutions, blending creativity with modern
-            technology.
+            I’m a Full-Stack Developer with specialize in building scalable, efficient, and user-friendly solutions that streamline operations and enhance productivity. By combining technical expertise with creativity, I deliver high-quality digital products that help businesses grow.
           </p>
 
           {/* CTA Buttons */}
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 "
-            style={{ animationDelay: "0.6s" }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 transition-all duration-700"
+            style={{ animationDelay: "0.4s" }}
           >
             <Button
               size="lg"
-              className="glass hover-glow transition delay-50 duration-200 group px-8 py-6 text-lg"
+              className="bg-primary text-white hover:bg-primary/90 shadow-xl shadow-primary/30 transition-all duration-300 px-10 py-7 text-lg font-bold group rounded-2xl"
               onClick={() => scrollToSection("projects")}
             >
-              View My Work
-              <ArrowDown className="ml-2 h-5 w-5  transition delay-150 duration-300 group-hover:translate-y-1 transition-transform " />
+              Explore My Work
+              <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
             </Button>
 
             <div className="flex gap-4">
-              <Button
-                variant="outline"
-                size="lg"
-                className="glass transition delay-50 duration-200 hover-glow"
+              <a 
+                href="https://github.com/rajZadafiya55" 
+                target="_blank"
+                className="p-4 rounded-2xl border-2 border-slate-100 text-slate-600 hover:border-primary hover:text-primary transition-all duration-300 bg-white shadow-sm"
               >
-                <a href="https://github.com/rajZadafiya55" target="_blank">
-                  <Github className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="glass transition delay-50 duration-200 hover-glow"
+                <Github className="h-6 w-6" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/raj-zadafiya-3b1ab1258" 
+                target="_blank"
+                className="p-4 rounded-2xl border-2 border-slate-100 text-slate-600 hover:border-primary hover:text-primary transition-all duration-300 bg-white shadow-sm"
               >
-                <a
-                  href="https://www.linkedin.com/in/raj-zadafiya-3b1ab1258"
-                  target="_blank"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="glass transition delay-50 duration-200 hover-glow"
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <button 
                 onClick={() => scrollToSection("contact")}
+                className="p-4 rounded-2xl border-2 border-slate-100 text-slate-600 hover:border-primary hover:text-primary transition-all duration-300 bg-white shadow-sm"
               >
-                <Mail className="h-5 w-5" />
-              </Button>
+                <Mail className="h-6 w-6" />
+              </button>
             </div>
           </div>
         </div>

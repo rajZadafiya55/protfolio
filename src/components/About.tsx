@@ -24,53 +24,7 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const skills = [
-    "Bootstrap",
-    "JavaScript",
-    "React.js",
-    "Vue,js",
-    "Node.js",
-    "Express.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "MUI",
-    "MongoDB",
-    "PostgreSQL",
-    "SQL",
-    "MYSQL",
-    "Redux",
-    "Vuex",
-    "Pinia",
-    "Socket.io",
-  ];
-
-  const tools = ["Git", "GitHub", "Docker", "Postman", "Jira"];
-
   const features = [
-    {
-      icon: Code,
-      title: "Clean Code",
-      description:
-        "Writing maintainable, scalable, and efficient code with best practices",
-    },
-    {
-      icon: Palette,
-      title: "Creative Design",
-      description:
-        "Crafting beautiful user interfaces with attention to detail and user experience",
-    },
-    {
-      icon: Zap,
-      title: "Performance",
-      description:
-        "Optimizing applications for speed, efficiency, and seamless user interactions",
-    },
-    {
-      icon: Users,
-      title: "Collaboration",
-      description:
-        "Working effectively in teams and communicating complex ideas clearly",
-    },
     {
       icon: Code,
       title: "WEB DEVELOPMENT",
@@ -83,126 +37,122 @@ const About = () => {
       description:
         "Building scalable and secure server-side applications and RESTful APIs with Node.js to support web projects.",
     },
+    {
+      icon: Palette,
+      title: "Creative Design",
+      description:
+        "Crafting beautiful user interfaces with attention to detail and user experience",
+    },
+    {
+      icon: Users,
+      title: "Collaboration",
+      description:
+        "Working effectively in teams and communicating complex ideas clearly",
+    },
   ];
 
   return (
     <section
       ref={sectionRef}
       id="about"
-      className="py-20 px-4 relative overflow-hidden"
+      className="py-12 px-4 bg-slate-50 relative overflow-hidden"
     >
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      {/* Subtle Background elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-[100px]" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section heading */}
-        <div
-          className={`text-center mb-16 ${
-            isVisible ? "animate-fade-in" : "opacity-0"
-          }`}
-        >
-          <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4">
+        <div className="text-center mb-20">
+          <div className={`inline-block px-4 py-1.5 mb-4 text-primary font-bold text-sm tracking-widest uppercase bg-primary/10 rounded-lg font-heading transition-all duration-700 ${isVisible ? "animate-fade-in" : "opacity-0"
+            }`}>
+            My Biography
+          </div>
+          <h2 className={`text-4xl md:text-6xl font-black text-slate-900 mb-6 font-heading transition-all duration-700 delay-150 ${isVisible ? "animate-fade-in" : "opacity-0"
+            }`}>
             About Me
           </h2>
 
-          <span className="mb-4 flex justify-center">
-            <a
-              href="https://drive.google.com/file/d/1IMk96dxOJGyHip0jRQeBRi6aDMOsntPC/view?usp=sharing"
-              download
-              className="flex w-fit items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-              target="_blank"
-            >
-              Download CV
-            </a>
-          </span>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate developer with a love for creating exceptional digital
-            experiences
+          <p className={`text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-medium transition-all duration-700 delay-300 ${isVisible ? "animate-fade-in" : "opacity-0"
+            }`}>
+            Passionate full-stack developer with 2 years of experience crafting high-performance
+            web applications with modern technologies.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Story section */}
           <div
-            className={`space-y-6 ${
-              isVisible ? "animate-slide-in-left" : "opacity-0"
-            }`}
+            className={`space-y-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+              }`}
           >
-            <h3 className="text-2xl font-semibold">My Journey</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              As a Web Developer with 1.5 year hands-on experience in building
-              scalable web applications, I bring strong expertise in React.js,
-              Node.js, Express.js, and MongoDB. Having contributed to real-time
-              ERP systems, RESTful API development, and user-friendly UI
-              designs, I excel at delivering interactive and efficient
-              solutions.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              My project work includes developing YouTube-like platforms,
-              restaurant management systems, and e-commerce websites, showcasing
-              my ability to design, develop, and deploy full-stack applications.
-              I thrive in competitive environments that encourage innovation and
-              continuous learning, aiming to contribute my skills to the growth
-              and success of the organization.
-            </p>
-
-            {/* Skills */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-medium">Technologies I work with:</h4>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <Badge
-                    key={skill}
-                    variant="outline"
-                    className="glass transition delay-50 duration-200 cursor-pointer hover-glow"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {skill}
-                  </Badge>
-                ))}
+            <div className={`relative group max-w-md mx-auto lg:mx-0 transition-all duration-700 delay-300 ${isVisible ? "animate-scale-in" : "opacity-0"
+              }`}>
+              <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+              <div className="relative overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
+                <img
+                  src="https://res.cloudinary.com/dsrk7genk/image/upload/v1769687325/6136526638779844186_dk0ct0.jpg"
+                  alt="Raj Zadafiya"
+                  className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-110"
+                />
               </div>
             </div>
-            <div className="space-y-4">
-              <h4 className="text-lg font-medium">Tools:</h4>
-              <div className="flex flex-wrap gap-2">
-                {tools.map((skill, index) => (
-                  <Badge
-                    key={skill}
-                    variant="outline"
-                    className="glass cursor-pointer transition delay-50 duration-200 hover-glow"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {skill}
-                  </Badge>
-                ))}
+
+            <div className={`space-y-6 transition-all duration-700 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}>
+              <h3 className="text-3xl font-bold text-slate-900 font-heading">My Journey</h3>
+              <p className="text-slate-600 leading-relaxed text-lg">
+                As a Web Developer with 2 year hands-on experience in building
+                scalable web applications, I bring strong expertise in React.js,
+                Node.js, Express.js, and MongoDB. Having contributed to real-time
+                ERP systems, RESTful API development, and user-friendly UI
+                designs, I excel at delivering interactive and efficient
+                solutions.
+              </p>
+              <p className="text-slate-600 leading-relaxed text-lg italic border-l-4 border-primary pl-6 py-2">
+                I thrive in competitive environments that encourage innovation and
+                continuous learning, aiming to contribute my skills to the growth
+                and success of the organization.
+              </p>
+
+              <div className="pt-6">
+                <a
+                  href="https://drive.google.com/file/d/1bR7xUnrg2uCzfQtZCWsR8_UNTapp0NBv/view?usp=drive_link"
+                  className="inline-flex items-center gap-2 bg-slate-900 hover:bg-primary text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl shadow-slate-200 group/btn"
+                  target="_blank"
+                >
+                  Download My Resume
+                  <Zap className="h-5 w-5 fill-current transition-transform group-hover/btn:rotate-12 group-hover/btn:scale-110" />
+                </a>
               </div>
             </div>
           </div>
 
           {/* Features grid */}
-          <div
-            className={`grid grid-cols-1 sm:grid-cols-2 gap-6 ${
-              isVisible ? "animate-slide-in-right" : "opacity-0"
-            }`}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, index) => (
-              <Card
+              <div
                 key={feature.title}
-                className="glass cursor-pointer hover-glow p-6 text-center group"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className={`transition-all duration-700 ${isVisible
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-10"
+                  }`}
+                style={{ transitionDelay: `${700 + index * 150}ms` }}
               >
-                <div className="mb-4 flex justify-center">
-                  <div className="p-3 rounded-full bg-primary/20 group-hover:bg-primary/30 transition-colors">
-                    <feature.icon className="h-6 w-6 text-primary" />
+                <Card
+                  className="h-full bg-white border-slate-100 p-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group rounded-3xl"
+                >
+                  <div className="mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:rotate-6">
+                      <feature.icon className="h-7 w-7" />
+                    </div>
                   </div>
-                </div>
-                <h3 className="font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </Card>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                  <p className="text-slate-500 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </Card>
+              </div>
             ))}
           </div>
         </div>

@@ -98,75 +98,78 @@ const Projects = () => {
     <section
       ref={sectionRef}
       id="projects"
-      className="py-20 px-4 relative overflow-hidden"
+      className="py-12 px-4 bg-slate-50 relative overflow-hidden"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
-
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section heading */}
         <div
-          className={`text-center mb-16 ${
+          className={`text-center mb-20 ${
             isVisible ? "animate-fade-in" : "opacity-0"
           }`}
         >
-          <h2 className="text-4xl md:text-6xl font-bold gradient-text mb-4 pb-3">
+          <div className="inline-block px-4 py-1.5 mb-4 text-primary font-bold text-sm tracking-widest uppercase bg-primary/10 rounded-lg font-heading">
+            My Portfolio
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 font-heading">
             Featured Projects
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of my recent work and creative solutions
+          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-medium">
+            Explore my latest work, where design meet functionality in unique digital experiences.
           </p>
         </div>
 
         {/* Projects grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, index) => (
             <Card
               key={project.title}
-              className={`glass cursor-pointer hover-glow group overflow-hidden ${
+              className={`bg-white border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group overflow-hidden rounded-3xl ${
                 project.featured ? "md:col-span-2 lg:col-span-2" : ""
-              } ${isVisible ? "animate-scale-in" : "opacity-0"}`}
+              } ${isVisible ? "animate-scale-in" : "opacity-0"} hover:-translate-y-2`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project image */}
-              <div className="relative overflow-hidden">
+              <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                {/* Project links */}
-                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Button size="sm" variant="outline" className="glass">
-                    <a href={project.github} target="_blank">
-                      <Github className="h-4 w-4" />
-                    </a>
-                  </Button>
-                  <Button size="sm" variant="outline" className="glass">
-                    <a href={project.live} target="_blank">
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </Button>
+                
+                {/* Project links overlay */}
+                <div className="absolute inset-0 bg-slate-900/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a 
+                    href={project.github} 
+                    target="_blank"
+                    className="p-3 bg-white text-slate-900 rounded-xl hover:bg-primary hover:text-white transition-all duration-300"
+                  >
+                    <Github className="h-6 w-6" />
+                  </a>
+                  <a 
+                    href={project.live} 
+                    target="_blank"
+                    className="p-3 bg-white text-slate-900 rounded-xl hover:bg-primary hover:text-white transition-all duration-300"
+                  >
+                    <ExternalLink className="h-6 w-6" />
+                  </a>
                 </div>
               </div>
 
               {/* Project content */}
-              <div className="p-6 space-y-4">
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+              <div className="p-8 space-y-4">
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-bold text-slate-900 group-hover:text-primary transition-colors font-heading">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-slate-500 leading-relaxed font-medium">
                     {project.description}
                   </p>
                 </div>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} className="bg-slate-50 text-slate-600 hover:bg-primary/10 hover:text-primary border-slate-100 px-3 py-1 font-semibold">
                       {tech}
                     </Badge>
                   ))}
@@ -178,18 +181,22 @@ const Projects = () => {
 
         {/* CTA */}
         <div
-          className={`text-center mt-16 ${
+          className={`text-center mt-20 ${
             isVisible ? "animate-fade-in" : "opacity-0"
           }`}
         >
-          <Button size="lg" className="glass hover-glow">
+          <Button 
+            size="lg" 
+            className="bg-slate-900 hover:bg-primary text-white px-10 py-7 text-lg font-bold rounded-2xl shadow-xl shadow-slate-200 transition-all duration-300"
+          >
             <a
               href="https://github.com/rajZadafiya55?tab=repositories"
               target="_blank"
+              className="flex items-center"
             >
-              View All Projects
+              See All My Works
+              <ExternalLink className="ml-2 h-5 w-5" />
             </a>
-            <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
