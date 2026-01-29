@@ -43,8 +43,8 @@ const skillsData = [
     icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
   },
   {
-    name:"Supabase",
-    icon:"https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg",
+    name: "Supabase",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg",
   },
   {
     name: "PostgreSQL",
@@ -71,7 +71,7 @@ const skillsData = [
     icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg",
   },
   {
-    name : "Pinia",
+    name: "Pinia",
     icon: "https://pinia.vuejs.org/logo.svg",
   },
   {
@@ -112,11 +112,11 @@ const Skills = () => {
       className="py-24 px-4 bg-white relative overflow-hidden"
     >
       {/* Background Dot Pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.4]" 
-        style={{ 
-          backgroundImage: 'radial-gradient(#e2e8f0 1.5px, transparent 1.5px)', 
-          backgroundSize: '30px 30px' 
+      <div
+        className="absolute inset-0 opacity-[0.4]"
+        style={{
+          backgroundImage: 'radial-gradient(#e2e8f0 1.5px, transparent 1.5px)',
+          backgroundSize: '30px 30px'
         }}
       />
 
@@ -127,7 +127,7 @@ const Skills = () => {
             Skills
             <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-1.5 bg-primary rounded-full" />
           </h2>
-          <p className="text-slate-500 font-medium text-lg pt-4">My technical level</p>
+          <p className="text-slate-500 font-medium text-lg pt-4">My Technical level</p>
         </div>
 
         {/* Skills Grid */}
@@ -135,9 +135,8 @@ const Skills = () => {
           {skillsData.map((skill, index) => (
             <div
               key={skill.name}
-              className={`transition-all duration-700 transform ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-              }`}
+              className={`transition-all duration-700 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                }`}
               style={{ transitionDelay: `${index * 50}ms` }}
             >
               <Card className="bg-white border-0 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] p-8 flex flex-col items-center justify-center gap-4 group transition-all duration-300 hover:-translate-y-2 rounded-[2rem]">
