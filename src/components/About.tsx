@@ -75,7 +75,7 @@ const About = () => {
 
           <p className={`text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-medium transition-all duration-700 delay-300 ${isVisible ? "animate-fade-in" : "opacity-0"
             }`}>
-            Passionate full-stack developer with 2 years of experience crafting high-performance
+            Passionate full-stack developer with 2.5+ years of experience crafting high-performance
             web applications with modern technologies.
           </p>
         </div>
@@ -102,7 +102,7 @@ const About = () => {
               }`}>
               <h3 className="text-3xl font-bold text-slate-900 font-heading">My Journey</h3>
               <p className="text-slate-600 leading-relaxed text-lg">
-                As a Web Developer with 2 year hands-on experience in building
+                As a Web Developer with 2.5+ year hands-on experience in building
                 scalable web applications, I bring strong expertise in React.js,
                 Node.js, Express.js, and MongoDB. Having contributed to real-time
                 ERP systems, RESTful API development, and user-friendly UI
@@ -117,7 +117,7 @@ const About = () => {
 
               <div className="pt-6">
                 <a
-                  href="https://drive.google.com/file/d/1bR7xUnrg2uCzfQtZCWsR8_UNTapp0NBv/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1EFP-TTp9upsHuwF9BDolEX87P4kYcis5/view?usp=sharing"
                   className="inline-flex items-center gap-2 bg-slate-900 hover:bg-primary text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl shadow-slate-200 group/btn"
                   target="_blank"
                 >
