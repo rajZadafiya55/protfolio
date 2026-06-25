@@ -117,7 +117,7 @@ const About = () => {
 
               <div className="pt-6">
                 <a
-                  href="https://drive.google.com/file/d/1EFP-TTp9upsHuwF9BDolEX87P4kYcis5/view?usp=sharing"
+                  href="https://drive.google.com/file/d/10bHExNHOTBRXnJbknZd01Ix3_FG1AHtF/view?usp=sharinghttps://drive.google.com/file/d/10bHExNHOTBRXnJbknZd01Ix3_FG1AHtF/view?usp=sharing"
                   className="inline-flex items-center gap-2 bg-slate-900 hover:bg-primary text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-xl shadow-slate-200 group/btn"
                   target="_blank"
                 >
