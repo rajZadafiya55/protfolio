@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import lovepdfImage from "../assets/lovepdf.png";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,6 +27,24 @@ const Projects = () => {
   }, []);
 
   const projects = [
+    {
+      title: "LoveMorePDF",
+      description:
+        "Built a full-stack PDF management application that provides various document processing tools, including PDF merge, split, compression, conversion, rotation, protection, unlocking, and image-to-PDF conversion.",
+      technologies: [
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "PDF-Lib",
+        "PDF.JS",
+        "Redux",
+        "TailwindCSS",
+      ],
+      image: lovepdfImage,
+      featured: true,
+      github: "https://github.com/rajZadafiya55",
+      live: "https://www.lovemorepdf.com/",
+    },
     {
       title: "YouTube Clone",
       description:
@@ -103,9 +122,8 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section heading */}
         <div
-          className={`text-center mb-20 ${
-            isVisible ? "animate-fade-in" : "opacity-0"
-          }`}
+          className={`text-center mb-20 ${isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
         >
           <div className="inline-block px-4 py-1.5 mb-4 text-primary font-bold text-sm tracking-widest uppercase bg-primary/10 rounded-lg font-heading">
             My Portfolio
@@ -123,9 +141,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={project.title}
-              className={`bg-white border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group overflow-hidden rounded-3xl ${
-                project.featured ? "md:col-span-2 lg:col-span-2" : ""
-              } ${isVisible ? "animate-scale-in" : "opacity-0"} hover:-translate-y-2`}
+              className={`bg-white border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group overflow-hidden rounded-3xl ${project.featured ? "md:col-span-2 lg:col-span-2" : ""
+                } ${isVisible ? "animate-scale-in" : "opacity-0"} hover:-translate-y-2`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project image */}
@@ -135,18 +152,18 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                
+
                 {/* Project links overlay */}
                 <div className="absolute inset-0 bg-slate-900/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a 
-                    href={project.github} 
+                  <a
+                    href={project.github}
                     target="_blank"
                     className="p-3 bg-white text-slate-900 rounded-xl hover:bg-primary hover:text-white transition-all duration-300"
                   >
                     <Github className="h-6 w-6" />
                   </a>
-                  <a 
-                    href={project.live} 
+                  <a
+                    href={project.live}
                     target="_blank"
                     className="p-3 bg-white text-slate-900 rounded-xl hover:bg-primary hover:text-white transition-all duration-300"
                   >
@@ -181,12 +198,11 @@ const Projects = () => {
 
         {/* CTA */}
         <div
-          className={`text-center mt-20 ${
-            isVisible ? "animate-fade-in" : "opacity-0"
-          }`}
+          className={`text-center mt-20 ${isVisible ? "animate-fade-in" : "opacity-0"
+            }`}
         >
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-slate-900 hover:bg-primary text-white px-10 py-7 text-lg font-bold rounded-2xl shadow-xl shadow-slate-200 transition-all duration-300"
           >
             <a
